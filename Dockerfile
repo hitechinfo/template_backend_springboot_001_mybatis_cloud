@@ -1,7 +1,9 @@
 FROM java:11
- 
+
+
+
 VOLUME /tmp 
-ADD target/cont-0.0.1-SNAPSHOT.jar app.jar
+ADD target/backend-1.0-SNAPSHOT.jar backend.jar
 ENV JAVE_OPTS=""
-RUN bash -c 'touch /app.jar'
-ENTRYPOINT ["java","-Djasecurity.egd=file:/dev/./urandom","-jar","/app.jar"]
+RUN bash -c 'touch /backend.jar'
+ENTRYPOINT ["java","-Djasecurity.egd=file:/dev/./urandom","-jar","/backend.jar"]
