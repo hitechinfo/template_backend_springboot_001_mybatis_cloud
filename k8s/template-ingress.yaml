@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1 
+kind: Ingress 
+metadata: 
+  name: template-ingress 
+  namespace: tcl-dtwiki 
+  annotations: 
+    ingress.kubernetes.io/rewrite-target: / 
+spec: 
+  rules: 
+  - host: 169.56.124.190
+    http: 
+      paths: 
+      - path: / 
+        backend: 
+          serviceName: template-service 
+          servicePort: 80 

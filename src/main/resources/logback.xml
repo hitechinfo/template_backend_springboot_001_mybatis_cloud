@@ -1,0 +1,53 @@
+<configuration>
+
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyyMMdd HH:mm:ss.SSS} [%thread] %-3level %logger{5} - %msg %n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<springProfile name="dev">
+			<file>C:/Users/Administrator/log/app.log</file>
+		</springProfile>
+		<springProfile name="prod">
+			<file>C:/Users/Administrator/log/app.log</file>
+		</springProfile>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<springProfile name="dev">
+		    		<fileNamePattern>C:/User/Administrator/log/app.%d{yyyy-MM-dd}.log</fileNamePattern>
+			</springProfile>
+			<springProfile name="prod">
+		    		<fileNamePattern>C:/User/Administrator/log/app.%d{yyyy-MM-dd}.log</fileNamePattern>
+			</springProfile>
+				<!--keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyyMMdd HH:mm:ss.SSS} [%thread] %-3level %logger{5} - %msg %n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="jdbc" level="OFF"/>
+	<logger name="jdbc.sqlonly" level="ON"/>
+	<logger name="jdbcsqltiming" level="OFF"/>
+	<logger name="jdbc.audit" level="OFF"/>
+	<logger name="jdbc.resultset" level="OFF"/>
+	<logger name="jdbc.resultsttable" level="INFO"/>
+	<logger name="jdbc.connection" level="OFF"/>
+		
+	<springProfile name="dev">
+		<root level="DEBUG">
+			<appender-ref ref="consoleAppender" />
+			<appender-ref ref="fileAppender" />
+		</root>
+	</springProfile>
+	<springProfile name="prod">
+		<root level="INFO">
+			<appender-ref ref="consoleAppender" />
+			<appender-ref ref="fileAppender" />
+		</root>
+	</springProfile>
+
+</configuration>
