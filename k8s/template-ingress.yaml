@@ -6,7 +6,7 @@ metadata:
     ingress.kubernetes.io/rewrite-target: / 
 spec: 
   rules: 
-  - host: 169.56.124.190
+  - host: backend.com
     http: 
       paths: 
       - path: / 
