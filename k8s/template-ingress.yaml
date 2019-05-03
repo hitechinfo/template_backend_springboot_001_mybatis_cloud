@@ -9,7 +9,7 @@ spec:
   - host: backend.com
     http: 
       paths: 
-      - path: / 
-        backend: 
+      - backend: 
           serviceName: template-service 
           servicePort: 8080
+        path: /
