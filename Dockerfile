@@ -1,8 +1,6 @@
 FROM java:11
 
-
-
-VOLUME /tmp 
+VOLUME /tmp
 ADD target/backend-1.0-SNAPSHOT.jar backend.jar
 ENV JAVE_OPTS=""
 RUN bash -c 'touch /backend.jar'
