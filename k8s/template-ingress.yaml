@@ -2,7 +2,6 @@ apiVersion: extensions/v1beta1
 kind: Ingress 
 metadata: 
   name: template-ingress 
-  namespace: template-backend 
   annotations: 
     ingress.kubernetes.io/rewrite-target: / 
 spec: 
