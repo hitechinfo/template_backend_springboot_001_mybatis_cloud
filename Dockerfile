@@ -1,4 +1,4 @@
-FROM java:3.6.1-jdk-8-alpine
+FROM adoptopenjdk/openjdk11:latest
 
 VOLUME /tmp
 ADD target/backend-1.0-SNAPSHOT.jar backend.jar
