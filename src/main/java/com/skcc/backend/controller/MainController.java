@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -62,7 +63,7 @@ public class MainController {
 	* @return UserDetails
 	*/
 	@RequestMapping("/auth")
-	public UserDetails authTemplate(@RequestBody Map<String, Object> req, HttpSession session, Authentication authentication){
+	public UserDetails authTemplate(@RequestBody Map<String, Object> req, HttpSession session){
 
 		logger.info("Hello World!-authTemplate{}", req);
 
@@ -70,10 +71,9 @@ public class MainController {
 
 		UserDetails auth = customUserDetailsService.loadUserByUsername(req.get("TEMPLATE_USER_ID").toString());
 
-//		String authUserId = req.get("TEMPLATE_USER_ID").toString();
-//		String authUserPw = req.get("TEMPLATE_USER_PW").toString();
-		SecurityContextHolder.getContext().setAuthentication(authentication);
-//		Authentication authentication = authenticationManager.authentication(authentication);
+		String authUserId = req.get("TEMPLATE_USER_ID").toString();
+		String authUserPw = req.get("TEMPLATE_USER_PW").toString();
+		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authUserId, authUserPw));
 		session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY, SecurityContextHolder.getContext());
 
 		return auth;
@@ -110,11 +110,11 @@ public class MainController {
 	*@return void
 	*@throws Exception
 	*/
-//	@RequestMapping("/datajpa")
-//	public void getTemplateJpa() throws Exception {
-//		logger.error(">>>>>>>>>>>>>>>>>Exception Test Error");
-//		throw new Exception("Exception Test Error!");
-//	}
+	@RequestMapping("/datajpa")
+	public void getTemplateJpa() throws Exception {
+		logger.error(">>>>>>>>>>>>>>>>>Exception Test Error");
+		throw new Exception("Exception Test Error!");
+	}
 
 }
 	

@@ -36,7 +36,7 @@ podTemplate(label:label,
                  dockerCmd.push registry: HARBOR_REGISTRY, imageName: DOCKER_IMAGE, imageVersion: BUILD_NUMBER, credentialsId: "HARBOR_CREDENTIALS" 
              } 
          } 
- 
+
          stage('DEPLOY') { 
              container('kubectl') {
                  kubeCmd.apply file: 'k8s/template-ingress.yaml', namespace:K8S_NAMESPACE

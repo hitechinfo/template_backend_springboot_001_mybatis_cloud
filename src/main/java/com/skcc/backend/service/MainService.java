@@ -42,20 +42,20 @@ public class MainService {
 		}
 	}
 
-//	/**
-//	* getTemplateJpa
-//	*
-//	* @return
-//	* @throws Exception
-//	*/
-//	
-//	public void getTemplateJpa() throws Exception {
-//		TemplateAuth templateAuthSearch = new TemplateAuth();
-//		Optional<TemplateAuth> userInfo = templateAuthRepository.findByAuthUserId("admin");
-//		//templateAuthSearch = userInfo.orElseThrow(() -> new Exception("Exception admin Error!"));
-//		templateAuthSearch = userInfo.orElseThrow(() -> new UsernameNotFoundException("Exception admin Error!"));
-//		logger.info("Hello World!-getTemplateJpa-getAuthUserType>>>>>>>>{}", templateAuthSearch.getAuthUserType());
-//	}
+	/**
+	* getTemplateJpa
+	*
+	* @return
+	* @throws Exception
+	*/
+	
+	public void getTemplateJpa() throws Exception {
+		TemplateAuth templateAuthSearch = new TemplateAuth();
+		Optional<TemplateAuth> userInfo = templateAuthRepository.findByAuthUserId("admin");
+//		templateAuthSearch = userInfo.orElseThrow(() -> new Exception("Exception admin Error!"));
+		templateAuthSearch = userInfo.orElseThrow(() -> new UsernameNotFoundException("Exception admin Error!"));
+		logger.info("Hello World!-getTemplateJpa-getAuthUserType>>>>>>>>{}", templateAuthSearch.getAuthUserType());
+	}
 
 }
 
