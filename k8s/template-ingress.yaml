@@ -6,7 +6,7 @@ metadata:
     ingress.kubernetes.io/rewrite-target: / 
 spec: 
   rules: 
-  - host: backend.com
+  - host: backend-submodule-sts.domain.com
     http: 
       paths: 
       - backend: 
