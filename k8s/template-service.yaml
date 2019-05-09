@@ -8,6 +8,5 @@ spec:
     port: 8080
     targetPort: 8080
   selector: 
-    app: template-service
-  type: ClusterIP
-  
+    app: template
+  type: NodePort
