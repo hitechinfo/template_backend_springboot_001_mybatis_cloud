@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:latest
+FROM adoptopenjdk/openjdk12:latest
 
 VOLUME /tmp
 ADD target/backend-1.0-SNAPSHOT.jar backend.jar

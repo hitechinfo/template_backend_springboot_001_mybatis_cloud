@@ -8,7 +8,7 @@ def K8S_NAMESPACE='submodule-template'
 podTemplate(label:label, 
     serviceAccount: "zcp-system-sa-${ZCP_USERID}", 
      containers: [ 
-         containerTemplate(name: 'maven', image:'maven:3.5.4-jdk-8-alpine', ttyEnabled: true, command: 'cat'), 
+         containerTemplate(name: 'maven', image:'maven:3-jdk-12', ttyEnabled: true, command: 'cat'), 
          containerTemplate(name: 'docker', image:'docker', ttyEnabled: true, command: 'cat'), 
          containerTemplate(name: 'kubectl', image:'lachlanevenson/k8s-kubectl', ttyEnabled: true, command: 'cat') 
      ], 
