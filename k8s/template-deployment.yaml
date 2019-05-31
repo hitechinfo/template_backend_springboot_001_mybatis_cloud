@@ -22,7 +22,7 @@ spec:
     spec: 
       containers: 
       - name: template
-        image: mgmtsv-registry.cloudzcp.io/template/template:01
+        image: 
         ports:  
         - containerPort: 8080 
         imagePullPolicy: Always 

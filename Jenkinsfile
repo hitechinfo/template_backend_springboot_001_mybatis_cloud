@@ -1,7 +1,7 @@
 @Library('retort-lib') _ 
 def label = "jenkins-${UUID.randomUUID().toString()}" 
 
-def ZCP_USERID='mgmtsv-admin' 
+def ZCP_USERID='' 
 def DOCKER_IMAGE='template/springboot' 
 def K8S_NAMESPACE='submodule-template' 
 
