@@ -5,7 +5,7 @@ Springboot, Spring Security, JPA 기반 템플릿
 Application.java - 우클릭 - Spring Boot App
 
 # 사용방법 및 기능 설명
-MainController.java 함수를 이용
+MainController.java 함수를 사용
 
 ## /main
 
