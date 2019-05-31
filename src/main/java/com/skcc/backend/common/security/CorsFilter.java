@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CrosFilter implements Filter {
+public class CorsFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig FilterConfig) throws ServletException {

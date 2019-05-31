@@ -43,4 +43,3 @@ public class H2Runner implements ApplicationRunner
 		}
 	}
 }
-

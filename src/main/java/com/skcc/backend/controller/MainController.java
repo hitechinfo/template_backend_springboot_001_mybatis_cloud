@@ -65,7 +65,7 @@ public class MainController {
 	@RequestMapping("/auth")
 	public UserDetails authTemplate(@RequestBody Map<String, Object> req, HttpSession session){
 
-		logger.info("Hello World!-authTemplate{}", req);
+		logger.info("Hello World!-authTemplate{}_jpa", req);
 
 		customUserDetailsService.createAccount(req.get("TEMPLATE_USER_ID").toString(), req.get("TEMPLATE_USER_PW").toString(),req.get("TEMPLATE_USER_TYPE").toString());
 
@@ -88,7 +88,7 @@ public class MainController {
 	@RequestMapping("/data")
 	@ResponseBody
 	public Map<String, Object> getTemplate() throws Exception{
-		logger.info("Hello World!-getTemplate-data-req");
+		logger.info("Hello World!-getTemplate-data-req_MariaDB");
 
 		ArrayList<Map<String, Object>> resultIt = (ArrayList<Map<String, Object>>) mainService.getTemplate();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -112,6 +112,16 @@ public class MainController {
 	*/
 	@RequestMapping("/datajpa")
 	public void getTemplateJpa() throws Exception {
+		mainService.getTemplateJpa();
+	}
+	
+	/**
+	* ExceptionTemplate
+	*
+	*@throws Exception
+	*/
+	@RequestMapping("/exception")
+	public void getTemplateException() throws Exception {
 		logger.error(">>>>>>>>>>>>>>>>>Exception Test Error");
 		throw new Exception("Exception Test Error!");
 	}
