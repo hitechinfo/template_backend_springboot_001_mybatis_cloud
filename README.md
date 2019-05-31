@@ -9,7 +9,7 @@ MainController.java 함수를 사용
 
 ## /main
 
-MainTemplate
+MainTemplate  
 get 호출 확인용
 
 request : get
