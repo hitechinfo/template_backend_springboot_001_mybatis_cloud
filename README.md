@@ -20,20 +20,20 @@ reponse : 200, Hello World!-MainController-main
 AuthTemplate  
 post 호출, JPA save 확인용  
 
-request : post
-body 내용 :
-{
-"TEMPLATE_USER_ID" : "authAdmin",
-"TEMPLATE_USER_PW" : "authAdmin",
-"TEMPLATE_USER_TYPE" : "authAdmin"
-}
-response : 
-"username": "authAdmin",
-"authorities":[
-{
-"authority": "authAdmin"
-}
-],  
+request : post  
+body 내용 :  
+{  
+"TEMPLATE_USER_ID" : "authAdmin",  
+"TEMPLATE_USER_PW" : "authAdmin",  
+"TEMPLATE_USER_TYPE" : "authAdmin"  
+}  
+response :   
+"username": "authAdmin",  
+"authorities":[  
+{  
+"authority": "authAdmin"  
+}  
+],    
 
 ## /data
 
@@ -41,14 +41,14 @@ MyBatisTemplate
 properties MariaDB로 설정, H2Runner run 메소드 내용 주석처리 후 테스트  
 post 호출, MariaDB, Mybatis 확인용  
 
-request : post
-response :
-{
-"rows":[
-{
-"TEST": "SUCCESS"
-}
-]
+request : post  
+response :  
+{  
+"rows":[  
+{  
+"TEST": "SUCCESS"  
+}  
+]  
 }  
 
 ## /datajpa
@@ -56,12 +56,12 @@ response :
 JPATemplate  
 post 호출, JPA find 확인용  
 
-request : post
-response : 
-400 에러,
-{
-"status": "BAD_REQUEST",
-"message": "Exception admin Error!"
+request : post  
+response :   
+400 에러,  
+{  
+"status": "BAD_REQUEST",  
+"message": "Exception admin Error!"  
 }  
 
 ## /exception
@@ -69,9 +69,9 @@ response :
 ExceptionTemplate  
 Custom exception 확인용  
 
-request : post
-response :
-{
-"status": "BAD_REQUEST",
-"message": "Exception Test Error!"
+request : post  
+response :  
+{  
+"status": "BAD_REQUEST",  
+"message": "Exception Test Error!"  
 }
