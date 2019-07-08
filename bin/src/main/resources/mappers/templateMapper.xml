@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="template">
+
+	<!--Template Mapper -->
+	
+	<resultMap type="java.util.Map" id="templateMap">
+		<result column="CAPABILITY" property="capa"/>
+	</resultMap>
+	<select id="daoQueryId" resultMap="templateMap" parameterType="java.util.HashMap">
+		SELECT TEST
+		FROM TEST_MARIA_TABLE
+	</select>
+
+	<resultMap type="java.util.Map" id="templateMapH2">
+		<result column="NAME" property="name"/>
+	</resultMap>
+	<select id="daoQueryIdH2" resultMap="templateMapH2" parameterType="java.util.HashMap">
+		SELECT NAME
+		FROM INFORMATION_SCHEMA.USERS
+	</select>
+</mapper>

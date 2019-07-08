@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1 
+kind: Ingress 
+metadata: 
+  name: template-ingress 
+  annotations: 
+    ingress.kubernetes.io/rewrite-target: / 
+spec: 
+  rules: 
+  - host: submodule-backend-sts.domain.com
+    http: 
+      paths: 
+      - backend: 
+          serviceName: template-service 
+          servicePort: 8080
+        path: /
