@@ -49,6 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	     .antMatchers("/auth").permitAll()
 	     .antMatchers("/data").permitAll()
 	     .antMatchers("/datajpa").permitAll()
+	     .antMatchers("/exception").permitAll()
 		.anyRequest().authenticated()
 		.and()
 	     .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER);
