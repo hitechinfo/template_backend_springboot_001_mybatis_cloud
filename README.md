@@ -56,13 +56,10 @@ response :
 JPATemplate  
 post 호출, JPA find 확인용  
 
-request : post  
+request :   
 response :   
-400 에러,  
-{  
-"status": "BAD_REQUEST",  
-"message": "Exception admin Error!"  
-}  
+
+console에 Hello World!-getTemplateJpa-getAuthUserType>>>>>>>>admin 메세지 확인
 
 ## /exception
 
