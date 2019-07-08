@@ -35,6 +35,16 @@ response :
 }  
 ],    
 
+## /datajpa
+
+JPATemplate  
+post 호출, JPA find 확인용  
+
+request :   
+response :   
+
+console에 Hello World!-getTemplateJpa-getAuthUserType>>>>>>>>admin 메세지 확인
+
 ## /data
 
 MyBatisTemplate  
@@ -50,16 +60,6 @@ response :
 }  
 ]  
 }  
-
-## /datajpa
-
-JPATemplate  
-post 호출, JPA find 확인용  
-
-request :   
-response :   
-
-console에 Hello World!-getTemplateJpa-getAuthUserType>>>>>>>>admin 메세지 확인
 
 ## /exception
 
