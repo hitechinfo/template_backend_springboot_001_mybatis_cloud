@@ -8,18 +8,18 @@
 
 	<appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<springProfile name="dev">
-			<file>C:/Users/Administrator/log/app.log</file>
+			<file>C:/Users/Administrator/Desktop/logFile/app.log</file>
 		</springProfile>
 		<springProfile name="prod">
-			<file>C:/Users/Administrator/log/app.log</file>
+			<file>C:/Users/Administrator/Desktop/logFile/app.log</file>
 		</springProfile>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- daily rollover -->
 			<springProfile name="dev">
-		    		<fileNamePattern>C:/User/Administrator/log/app.%d{yyyy-MM-dd}.log</fileNamePattern>
+		    		<fileNamePattern>C:/Users/Administrator/Desktop/logFile/app.%d{yyyy-MM-dd}.log</fileNamePattern>
 			</springProfile>
 			<springProfile name="prod">
-		    		<fileNamePattern>C:/User/Administrator/log/app.%d{yyyy-MM-dd}.log</fileNamePattern>
+		    		<fileNamePattern>C:/Users/Administrator/Desktop/logFile/app.%d{yyyy-MM-dd}.log</fileNamePattern>
 			</springProfile>
 				<!--keep 30 days' worth of history -->
 			<maxHistory>30</maxHistory>
