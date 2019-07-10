@@ -32,14 +32,14 @@ public class H2Runner implements ApplicationRunner
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 //		// TODO Auto-generated method stub
-		try(Connection concection = dataSource.getConnection()){ //H2 DB Connection
-
-		TemplateAuth templateAuth = new TemplateAuth();
-		//JPA TABLE INSERT AUTH
-		templateAuth.setAuthUserId("admin");
-		templateAuth.setAuthUserPw("admin");
-		templateAuth.setAuthUserType("admin");
-		templateAuthRepository.save(templateAuth);
-		}
+//		try(Connection concection = dataSource.getConnection()){ //H2 DB Connection
+//
+//		TemplateAuth templateAuth = new TemplateAuth();
+//		//JPA TABLE INSERT AUTH
+//		templateAuth.setAuthUserId("admin");
+//		templateAuth.setAuthUserPw("admin");
+//		templateAuth.setAuthUserType("admin");
+//		templateAuthRepository.save(templateAuth);
+//		}
 	}
 }

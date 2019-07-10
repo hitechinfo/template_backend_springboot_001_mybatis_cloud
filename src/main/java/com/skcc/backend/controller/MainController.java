@@ -52,7 +52,7 @@ public class MainController {
 		logger.info("logback example - info level");
 		logger.debug("logback example - debug level");
 
-		return new ResponseEntity<String>("Hello World!-MainController-main-test", HttpStatus.OK);
+		return new ResponseEntity<String>("Hello World!-MainController-main", HttpStatus.OK);
 	}
 
 	/**
