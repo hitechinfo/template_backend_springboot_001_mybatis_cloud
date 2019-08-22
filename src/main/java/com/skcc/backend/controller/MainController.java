@@ -26,6 +26,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.skcc.backend.common.security.CustomUserDetailsService;
 import com.skcc.backend.service.MainService;
 
+import io.swagger.annotations.Api;
+
+@Api(value="v1")
 @RestController
 public class MainController {
 

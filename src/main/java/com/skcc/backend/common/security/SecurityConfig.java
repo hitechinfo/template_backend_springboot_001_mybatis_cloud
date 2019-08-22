@@ -34,8 +34,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers("/h2console/**");
+		web.ignoring().antMatchers("/v2/api-docs", "/swagger-resources/**", "/swagger-ui.html", "/webjars/**", "/swagger/**");
 	}
-
+	 
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 	  http
@@ -45,14 +47,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	        .authenticationEntryPoint(securityEntryPoint)
 		.and()
 	     .authorizeRequests()
-	     .antMatchers("/main").permitAll()
-	     .antMatchers("/auth").permitAll()
-	     .antMatchers("/data").permitAll()
-	     .antMatchers("/datajpa").permitAll()
-	     .antMatchers("/exception").permitAll()
-		.anyRequest().authenticated()
-		.and()
+	     .antMatchers("/*").permitAll()
+	     .antMatchers("/*/*").permitAll()
+	     .antMatchers("/v2/api-docs", "/swagger-resources", "/configuration/**", "/swagger*.**", "/webjars/**").permitAll()
+   		 .anyRequest().authenticated()
+		 .and()
 	     .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER);
+
 	}
 
 	@Bean
