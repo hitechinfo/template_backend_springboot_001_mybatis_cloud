@@ -4,26 +4,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.http.HttpSession;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.skcc.backend.common.security.CustomUserDetailsService;
 import com.skcc.backend.service.MainService;
 
 import io.swagger.annotations.Api;
@@ -34,10 +25,6 @@ public class MainController {
 
 	@Autowired
 	MainService mainService;
-
-
-	@Autowired
-	CustomUserDetailsService customUserDetailsService;
 
 	@Autowired
 	AuthenticationManager authenticationManager;
@@ -56,30 +43,6 @@ public class MainController {
 		logger.debug("logback example - debug level");
 
 		return new ResponseEntity<String>("Hello World!-MainController-main-cloudVer", HttpStatus.OK);
-	}
-
-	/**
-	* AuthTemplate
-	*
-	* @param req
-	 * @param authentication 
-	* @return UserDetails
-	*/
-	@RequestMapping("/auth")
-	public UserDetails authTemplate(@RequestBody Map<String, Object> req, HttpSession session){
-
-		logger.info("Hello World!-authTemplate{}_jpa", req);
-
-		customUserDetailsService.createAccount(req.get("TEMPLATE_USER_ID").toString(), req.get("TEMPLATE_USER_PW").toString(),req.get("TEMPLATE_USER_TYPE").toString());
-
-		UserDetails auth = customUserDetailsService.loadUserByUsername(req.get("TEMPLATE_USER_ID").toString());
-
-		String authUserId = req.get("TEMPLATE_USER_ID").toString();
-		String authUserPw = req.get("TEMPLATE_USER_PW").toString();
-		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authUserId, authUserPw));
-		session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY, SecurityContextHolder.getContext());
-
-		return auth;
 	}
 
 	/**
@@ -107,17 +70,6 @@ public class MainController {
 		return resultMap;
 	}
 
-	/**
-	* JPATemplate
-	*
-	*@return void
-	*@throws Exception
-	*/
-	@RequestMapping("/datajpa")
-	public void getTemplateJpa() throws Exception {
-		mainService.getTemplateJpa();
-	}
-	
 	/**
 	* ExceptionTemplate
 	*
