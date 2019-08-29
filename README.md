@@ -1,4 +1,4 @@
-# template_backend_springboot_001_cloud
+# template_backend_springboot_001_mybatis_cloud
 MyBatis - Springboot, Spring Security, MyBayis 기반 템플릿(Cloud Ver)
 
 # 작업환경 설정
